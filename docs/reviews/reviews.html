@@ -1,1711 +1,703 @@
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>心得体会</title>
-    <style>
-      /* cspell:disable-file */
-      /* webkit printing magic: print all background colors */
-      html {
-        -webkit-print-color-adjust: exact;
-      }
-      * {
-        box-sizing: border-box;
-        -webkit-print-color-adjust: exact;
-      }
-
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      @media only screen {
-        body {
-          margin: 2em auto;
-          max-width: 900px;
-          color: rgb(55, 53, 47);
-        }
-      }
-
-      body {
-        line-height: 1.5;
-        white-space: pre-wrap;
-      }
-
-      a,
-      a.visited {
-        color: inherit;
-        text-decoration: underline;
-      }
-
-      .pdf-relative-link-path {
-        font-size: 80%;
-        color: #444;
-      }
-
-      h1,
-      h2,
-      h3 {
-        letter-spacing: -0.01em;
-        line-height: 1.2;
-        font-weight: 600;
-        margin-bottom: 0;
-      }
-
-      .page-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-top: 0;
-        margin-bottom: 0.75em;
-      }
-
-      h1 {
-        font-size: 1.875rem;
-        margin-top: 1.875rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-        margin-top: 1.5rem;
-      }
-
-      h3 {
-        font-size: 1.25rem;
-        margin-top: 1.25rem;
-      }
-
-      .source {
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        padding: 1.5em;
-        word-break: break-all;
-      }
-
-      .callout {
-        border-radius: 3px;
-        padding: 1rem;
-      }
-
-      figure {
-        margin: 1.25em 0;
-        page-break-inside: avoid;
-      }
-
-      figcaption {
-        opacity: 0.5;
-        font-size: 85%;
-        margin-top: 0.5em;
-      }
-
-      mark {
-        background-color: transparent;
-      }
-
-      .indented {
-        padding-left: 1.5em;
-      }
-
-      hr {
-        background: transparent;
-        display: block;
-        width: 100%;
-        height: 1px;
-        visibility: visible;
-        border: none;
-        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-      }
-
-      img {
-        max-width: 100%;
-      }
-
-      @media only print {
-        img {
-          max-height: 100vh;
-          object-fit: contain;
-        }
-      }
-
-      @page {
-        margin: 1in;
-      }
-
-      .collection-content {
-        font-size: 0.875rem;
-      }
-
-      .column-list {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .column {
-        padding: 0 1em;
-      }
-
-      .column:first-child {
-        padding-left: 0;
-      }
-
-      .column:last-child {
-        padding-right: 0;
-      }
-
-      .table_of_contents-item {
-        display: block;
-        font-size: 0.875rem;
-        line-height: 1.3;
-        padding: 0.125rem;
-      }
-
-      .table_of_contents-indent-1 {
-        margin-left: 1.5rem;
-      }
-
-      .table_of_contents-indent-2 {
-        margin-left: 3rem;
-      }
-
-      .table_of_contents-indent-3 {
-        margin-left: 4.5rem;
-      }
-
-      .table_of_contents-link {
-        text-decoration: none;
-        opacity: 0.7;
-        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-      }
-
-      table,
-      th,
-      td {
-        border: 1px solid rgba(55, 53, 47, 0.09);
-        border-collapse: collapse;
-      }
-
-      table {
-        border-left: none;
-        border-right: none;
-      }
-
-      th,
-      td {
-        font-weight: normal;
-        padding: 0.25em 0.5em;
-        line-height: 1.5;
-        min-height: 1.5em;
-        text-align: left;
-      }
-
-      th {
-        color: rgba(55, 53, 47, 0.6);
-      }
-
-      ol,
-      ul {
-        margin: 0;
-        margin-block-start: 0.6em;
-        margin-block-end: 0.6em;
-      }
-
-      li > ol:first-child,
-      li > ul:first-child {
-        margin-block-start: 0.6em;
-      }
-
-      ul > li {
-        list-style: disc;
-      }
-
-      ul.to-do-list {
-        padding-inline-start: 0;
-      }
-
-      ul.to-do-list > li {
-        list-style: none;
-      }
-
-      .to-do-children-checked {
-        text-decoration: line-through;
-        opacity: 0.375;
-      }
-
-      ul.toggle > li {
-        list-style: none;
-      }
-
-      ul {
-        padding-inline-start: 1.7em;
-      }
-
-      ul > li {
-        padding-left: 0.1em;
-      }
-
-      ol {
-        padding-inline-start: 1.6em;
-      }
-
-      ol > li {
-        padding-left: 0.2em;
-      }
-
-      .mono ol {
-        padding-inline-start: 2em;
-      }
-
-      .mono ol > li {
-        text-indent: -0.4em;
-      }
-
-      .toggle {
-        padding-inline-start: 0em;
-        list-style-type: none;
-      }
-
-      /* Indent toggle children */
-      .toggle > li > details {
-        padding-left: 1.7em;
-      }
-
-      .toggle > li > details > summary {
-        margin-left: -1.1em;
-      }
-
-      .selected-value {
-        display: inline-block;
-        padding: 0 0.5em;
-        background: rgba(206, 205, 202, 0.5);
-        border-radius: 3px;
-        margin-right: 0.5em;
-        margin-top: 0.3em;
-        margin-bottom: 0.3em;
-        white-space: nowrap;
-      }
-
-      .collection-title {
-        display: inline-block;
-        margin-right: 1em;
-      }
-
-      .page-description {
-        margin-bottom: 2em;
-      }
-
-      .simple-table {
-        margin-top: 1em;
-        font-size: 0.875rem;
-        empty-cells: show;
-      }
-      .simple-table td {
-        height: 29px;
-        min-width: 120px;
-      }
-
-      .simple-table th {
-        height: 29px;
-        min-width: 120px;
-      }
-
-      .simple-table-header-color {
-        background: rgb(247, 246, 243);
-        color: black;
-      }
-      .simple-table-header {
-        font-weight: 500;
-      }
-
-      time {
-        opacity: 0.5;
-      }
-
-      .icon {
-        display: inline-block;
-        max-width: 1.2em;
-        max-height: 1.2em;
-        text-decoration: none;
-        vertical-align: text-bottom;
-        margin-right: 0.5em;
-      }
-
-      img.icon {
-        border-radius: 3px;
-      }
-
-      .user-icon {
-        width: 1.5em;
-        height: 1.5em;
-        border-radius: 100%;
-        margin-right: 0.5rem;
-      }
-
-      .user-icon-inner {
-        font-size: 0.8em;
-      }
-
-      .text-icon {
-        border: 1px solid #000;
-        text-align: center;
-      }
-
-      .page-cover-image {
-        display: block;
-        object-fit: cover;
-        width: 100%;
-        max-height: 30vh;
-      }
-
-      .page-header-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-
-      .page-header-icon-with-cover {
-        margin-top: -0.72em;
-        margin-left: 0.07em;
-      }
-
-      .page-header-icon img {
-        border-radius: 3px;
-      }
-
-      .link-to-page {
-        margin: 1em 0;
-        padding: 0;
-        border: none;
-        font-weight: 500;
-      }
-
-      p > .user {
-        opacity: 0.5;
-      }
-
-      td > .user,
-      td > time {
-        white-space: nowrap;
-      }
-
-      input[type="checkbox"] {
-        transform: scale(1.5);
-        margin-right: 0.6em;
-        vertical-align: middle;
-      }
-
-      p {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-      }
-
-      .image {
-        border: none;
-        margin: 1.5em 0;
-        padding: 0;
-        border-radius: 0;
-        text-align: center;
-      }
-
-      .code,
-      code {
-        background: rgba(135, 131, 120, 0.15);
-        border-radius: 3px;
-        padding: 0.2em 0.4em;
-        border-radius: 3px;
-        font-size: 85%;
-        tab-size: 2;
-      }
-
-      code {
-        color: #eb5757;
-      }
-
-      .code {
-        padding: 1.5em 1em;
-      }
-
-      .code-wrap {
-        white-space: pre-wrap;
-        word-break: break-all;
-      }
-
-      .code > code {
-        background: none;
-        padding: 0;
-        font-size: 100%;
-        color: inherit;
-      }
-
-      blockquote {
-        font-size: 1.25em;
-        margin: 1em 0;
-        padding-left: 1em;
-        border-left: 3px solid rgb(55, 53, 47);
-      }
-
-      .bookmark {
-        text-decoration: none;
-        max-height: 8em;
-        padding: 0;
-        display: flex;
-        width: 100%;
-        align-items: stretch;
-      }
-
-      .bookmark-title {
-        font-size: 0.85em;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        height: 1.75em;
-        white-space: nowrap;
-      }
-
-      .bookmark-text {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .bookmark-info {
-        flex: 4 1 180px;
-        padding: 12px 14px 14px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .bookmark-image {
-        width: 33%;
-        flex: 1 1 180px;
-        display: block;
-        position: relative;
-        object-fit: cover;
-        border-radius: 1px;
-      }
-
-      .bookmark-description {
-        color: rgba(55, 53, 47, 0.6);
-        font-size: 0.75em;
-        overflow: hidden;
-        max-height: 4.5em;
-        word-break: break-word;
-      }
-
-      .bookmark-href {
-        font-size: 0.75em;
-        margin-top: 0.25em;
-      }
-
-      .sans {
-        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,
-          "Segoe UI Variable Display", "Segoe UI", Helvetica,
-          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
-          "Segoe UI Symbol";
-      }
-      .code {
-        font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono",
-          "Liberation Mono", Courier, monospace;
-      }
-      .serif {
-        font-family: Lyon-Text, Georgia, ui-serif, serif;
-      }
-      .mono {
-        font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
-      }
-      .pdf .sans {
-        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
-          "Segoe UI Variable Display", "Segoe UI", Helvetica,
-          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
-          "Segoe UI Symbol", "Twemoji", "Noto Color Emoji", "Noto Sans CJK JP";
-      }
-      .pdf:lang(zh-CN) .sans {
-        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
-          "Segoe UI Variable Display", "Segoe UI", Helvetica,
-          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
-          "Segoe UI Symbol", "Twemoji", "Noto Color Emoji", "Noto Sans CJK SC";
-      }
-      .pdf:lang(zh-TW) .sans {
-        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
-          "Segoe UI Variable Display", "Segoe UI", Helvetica,
-          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
-          "Segoe UI Symbol", "Twemoji", "Noto Color Emoji", "Noto Sans CJK TC";
-      }
-      .pdf:lang(ko-KR) .sans {
-        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
-          "Segoe UI Variable Display", "Segoe UI", Helvetica,
-          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
-          "Segoe UI Symbol", "Twemoji", "Noto Color Emoji", "Noto Sans CJK KR";
-      }
-      .pdf .code {
-        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
-          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
-          "Noto Color Emoji", "Noto Sans Mono CJK JP";
-      }
-      .pdf:lang(zh-CN) .code {
-        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
-          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
-          "Noto Color Emoji", "Noto Sans Mono CJK SC";
-      }
-      .pdf:lang(zh-TW) .code {
-        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
-          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
-          "Noto Color Emoji", "Noto Sans Mono CJK TC";
-      }
-      .pdf:lang(ko-KR) .code {
-        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
-          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
-          "Noto Color Emoji", "Noto Sans Mono CJK KR";
-      }
-      .pdf .serif {
-        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
-          "Noto Color Emoji", "Noto Serif CJK JP";
-      }
-      .pdf:lang(zh-CN) .serif {
-        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
-          "Noto Color Emoji", "Noto Serif CJK SC";
-      }
-      .pdf:lang(zh-TW) .serif {
-        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
-          "Noto Color Emoji", "Noto Serif CJK TC";
-      }
-      .pdf:lang(ko-KR) .serif {
-        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
-          "Noto Color Emoji", "Noto Serif CJK KR";
-      }
-      .pdf .mono {
-        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
-          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK JP";
-      }
-      .pdf:lang(zh-CN) .mono {
-        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
-          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK SC";
-      }
-      .pdf:lang(zh-TW) .mono {
-        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
-          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK TC";
-      }
-      .pdf:lang(ko-KR) .mono {
-        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
-          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK KR";
-      }
-      .highlight-default {
-        color: rgba(55, 53, 47, 1);
-      }
-      .highlight-gray {
-        color: rgba(120, 119, 116, 1);
-        fill: rgba(120, 119, 116, 1);
-      }
-      .highlight-brown {
-        color: rgba(159, 107, 83, 1);
-        fill: rgba(159, 107, 83, 1);
-      }
-      .highlight-orange {
-        color: rgba(217, 115, 13, 1);
-        fill: rgba(217, 115, 13, 1);
-      }
-      .highlight-yellow {
-        color: rgba(203, 145, 47, 1);
-        fill: rgba(203, 145, 47, 1);
-      }
-      .highlight-teal {
-        color: rgba(68, 131, 97, 1);
-        fill: rgba(68, 131, 97, 1);
-      }
-      .highlight-blue {
-        color: rgba(51, 126, 169, 1);
-        fill: rgba(51, 126, 169, 1);
-      }
-      .highlight-purple {
-        color: rgba(144, 101, 176, 1);
-        fill: rgba(144, 101, 176, 1);
-      }
-      .highlight-pink {
-        color: rgba(193, 76, 138, 1);
-        fill: rgba(193, 76, 138, 1);
-      }
-      .highlight-red {
-        color: rgba(212, 76, 71, 1);
-        fill: rgba(212, 76, 71, 1);
-      }
-      .highlight-default_background {
-        color: rgba(55, 53, 47, 1);
-      }
-      .highlight-gray_background {
-        background: rgba(241, 241, 239, 1);
-      }
-      .highlight-brown_background {
-        background: rgba(244, 238, 238, 1);
-      }
-      .highlight-orange_background {
-        background: rgba(251, 236, 221, 1);
-      }
-      .highlight-yellow_background {
-        background: rgba(251, 237, 214, 1);
-      }
-      .highlight-teal_background {
-        background: rgba(237, 243, 236, 1);
-      }
-      .highlight-blue_background {
-        background: rgba(231, 243, 248, 1);
-      }
-      .highlight-purple_background {
-        background: rgba(244, 240, 247, 0.8);
-      }
-      .highlight-pink_background {
-        background: rgba(249, 238, 243, 0.8);
-      }
-      .highlight-red_background {
-        background: rgba(253, 235, 236, 1);
-      }
-      .block-color-default {
-        color: inherit;
-        fill: inherit;
-      }
-      .block-color-gray {
-        color: rgba(120, 119, 116, 1);
-        fill: rgba(120, 119, 116, 1);
-      }
-      .block-color-brown {
-        color: rgba(159, 107, 83, 1);
-        fill: rgba(159, 107, 83, 1);
-      }
-      .block-color-orange {
-        color: rgba(217, 115, 13, 1);
-        fill: rgba(217, 115, 13, 1);
-      }
-      .block-color-yellow {
-        color: rgba(203, 145, 47, 1);
-        fill: rgba(203, 145, 47, 1);
-      }
-      .block-color-teal {
-        color: rgba(68, 131, 97, 1);
-        fill: rgba(68, 131, 97, 1);
-      }
-      .block-color-blue {
-        color: rgba(51, 126, 169, 1);
-        fill: rgba(51, 126, 169, 1);
-      }
-      .block-color-purple {
-        color: rgba(144, 101, 176, 1);
-        fill: rgba(144, 101, 176, 1);
-      }
-      .block-color-pink {
-        color: rgba(193, 76, 138, 1);
-        fill: rgba(193, 76, 138, 1);
-      }
-      .block-color-red {
-        color: rgba(212, 76, 71, 1);
-        fill: rgba(212, 76, 71, 1);
-      }
-      .block-color-default_background {
-        color: inherit;
-        fill: inherit;
-      }
-      .block-color-gray_background {
-        background: rgba(241, 241, 239, 1);
-      }
-      .block-color-brown_background {
-        background: rgba(244, 238, 238, 1);
-      }
-      .block-color-orange_background {
-        background: rgba(251, 236, 221, 1);
-      }
-      .block-color-yellow_background {
-        background: rgba(251, 237, 214, 1);
-      }
-      .block-color-teal_background {
-        background: rgba(237, 243, 236, 1);
-      }
-      .block-color-blue_background {
-        background: rgba(231, 243, 248, 1);
-      }
-      .block-color-purple_background {
-        background: rgba(244, 240, 247, 0.8);
-      }
-      .block-color-pink_background {
-        background: rgba(249, 238, 243, 0.8);
-      }
-      .block-color-red_background {
-        background: rgba(253, 235, 236, 1);
-      }
-      .select-value-color-uiBlue {
-        background-color: rgba(35, 131, 226, 0.07);
-      }
-      .select-value-color-pink {
-        background-color: rgba(245, 224, 233, 1);
-      }
-      .select-value-color-purple {
-        background-color: rgba(232, 222, 238, 1);
-      }
-      .select-value-color-green {
-        background-color: rgba(219, 237, 219, 1);
-      }
-      .select-value-color-gray {
-        background-color: rgba(227, 226, 224, 1);
-      }
-      .select-value-color-transparentGray {
-        background-color: rgba(227, 226, 224, 0);
-      }
-      .select-value-color-translucentGray {
-        background-color: rgba(0, 0, 0, 0.06);
-      }
-      .select-value-color-orange {
-        background-color: rgba(250, 222, 201, 1);
-      }
-      .select-value-color-brown {
-        background-color: rgba(238, 224, 218, 1);
-      }
-      .select-value-color-red {
-        background-color: rgba(255, 226, 221, 1);
-      }
-      .select-value-color-yellow {
-        background-color: rgba(249, 228, 188, 1);
-      }
-      .select-value-color-blue {
-        background-color: rgba(211, 229, 239, 1);
-      }
-      .select-value-color-pageGlass {
-        background-color: undefined;
-      }
-      .select-value-color-washGlass {
-        background-color: undefined;
-      }
-
-      .checkbox {
-        display: inline-flex;
-        vertical-align: text-bottom;
-        width: 16;
-        height: 16;
-        background-size: 16px;
-        margin-left: 2px;
-        margin-right: 5px;
-      }
-
-      .checkbox-on {
-        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-      }
-
-      .checkbox-off {
-        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-      }
-    </style>
-  </head>
-  <body>
-    <article id="56d788aa-f334-4e21-9d77-3221db62d502" class="page sans">
-      <header>
-        <h1 class="page-title">心得体会</h1>
-        <p class="page-description"></p>
-      </header>
-      <div class="page-body">
-        <h1 id="90853985-322e-4645-8ed6-27586ce309e8" class="">
-          软件开发实践 2
-        </h1>
-        <ul id="6c1b822a-7640-404a-95e7-592142ffa56d" class="bulleted-list">
-          <li style="list-style-type: disc">授课教师：吴以凡</li>
-        </ul>
-        <ul id="38e648c6-9ddd-477b-9fce-cb6553e37a6a" class="bulleted-list">
-          <li style="list-style-type: disc">时间：2024.08.27 - 2024.09.05</li>
-        </ul>
-        <ul id="489b3853-0db5-468f-935e-a9dee63339b0" class="bulleted-list">
-          <li style="list-style-type: disc">文档撰写者：22050208 - 黄子烨</li>
-        </ul>
-        <h2 id="a1ce8efa-812d-4e74-85d1-87fbcb02e2ae" class="">1. 项目总览</h2>
-        <h3 id="c12615ca-787c-4fb7-83f4-140addd409c2" class="">
-          1.1. 项目选题
-        </h3>
-        <p id="148225d7-3807-4978-b212-e89b13bcf61f" class="">
-          在本次短学期下发任务的安排来看，我们需要从老师提供9个题目中选出一个，作为将要完成的项目；而从人员分配上来看，我们团队有5个人，每个人都分配到了不同的任务：
-        </p>
-        <div id="3290ca37-bc46-48b1-81ed-0eb76da752e6" class="column-list">
-          <div
-            id="be346c4a-98f3-4ca5-a6d0-69765754e1ce"
-            style="width: 50%"
-            class="column"
-          >
-            <table
-              id="1f57b133-9cb6-4abe-a746-99b36c99268e"
-              class="simple-table"
-            >
-              <thead class="simple-table-header">
-                <tr id="8c916a02-4a5a-43a2-b776-397b249dca8d">
-                  <th
-                    id="hd^g"
-                    class="simple-table-header-color simple-table-header"
-                    style="width: 313px"
-                  >
-                    具体项目名称
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr id="2f64f101-8623-439f-bbb5-045a76e02a9e">
-                  <td id="hd^g" class="" style="width: 313px">
-                    团队任务协作系统
-                  </td>
-                </tr>
-                <tr id="b311e786-3e74-4cc1-96b4-08d0f14e9f1e">
-                  <td id="hd^g" class="" style="width: 313px">
-                    在线题库与组卷系统
-                  </td>
-                </tr>
-                <tr id="40a71331-7011-4e3e-90d5-93279291e498">
-                  <td id="hd^g" class="" style="width: 313px">在线学习平台</td>
-                </tr>
-                <tr id="748e2896-d9f3-42c0-ba5f-fca6c1922d06">
-                  <td id="hd^g" class="" style="width: 313px">
-                    校园二手交易系统
-                  </td>
-                </tr>
-                <tr id="6809c996-26fe-40d8-abe0-0f240f1456bd">
-                  <td id="hd^g" class="" style="width: 313px">
-                    设施报修管理系统
-                  </td>
-                </tr>
-                <tr id="feea4a59-64d8-4ab9-824b-e5929ca44ea9">
-                  <td id="hd^g" class="" style="width: 313px">
-                    <mark class="highlight-teal_background"
-                      >宠物信息交流平台</mark
-                    >
-                  </td>
-                </tr>
-                <tr id="bb8ff822-e5b8-4906-a26a-87d33710b649">
-                  <td id="hd^g" class="" style="width: 313px">旅游管理系统</td>
-                </tr>
-                <tr id="d3a8434b-df8d-4e8a-aa63-2b9f854e511f">
-                  <td id="hd^g" class="" style="width: 313px">在线招聘系统</td>
-                </tr>
-                <tr id="07770883-dbff-4804-bce9-c7ed496e9b56">
-                  <td id="hd^g" class="" style="width: 313px">
-                    AI驱动的客户支持系统
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div
-            id="c140e1a6-124d-4ab3-a997-e81e001b4e19"
-            style="width: 50%"
-            class="column"
-          >
-            <table
-              id="deeb63d2-af0b-44ba-b581-b99f27384982"
-              class="simple-table"
-            >
-              <thead class="simple-table-header">
-                <tr id="d201faa8-9cfb-4626-9d8b-d962bac79538">
-                  <th
-                    id="JZ{A"
-                    class="simple-table-header-color simple-table-header"
-                    style="width: 156.5px"
-                  >
-                    开发人员
-                  </th>
-                  <th
-                    id="Nf{W"
-                    class="simple-table-header-color simple-table-header"
-                    style="width: 156.5px"
-                  >
-                    具体任务
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr id="fc55e195-6cc4-4bf9-b1c8-49d58acda5c8">
-                  <td id="JZ{A" class="" style="width: 156.5px">楼乐天</td>
-                  <td id="Nf{W" class="" style="width: 156.5px">
-                    项目经理、测试人员、文档撰写
-                  </td>
-                </tr>
-                <tr id="32f737ea-17bb-4fda-af7b-ea06f076b1f3">
-                  <td id="JZ{A" class="" style="width: 156.5px">吴佳哲</td>
-                  <td id="Nf{W" class="" style="width: 156.5px">
-                    前端开发（PC端）
-                  </td>
-                </tr>
-                <tr id="9f1441b8-62c1-4303-8976-51cab12201a6">
-                  <td id="JZ{A" class="" style="width: 156.5px">黄子烨</td>
-                  <td id="Nf{W" class="" style="width: 156.5px">
-                    前端开发（移动端）
-                  </td>
-                </tr>
-                <tr id="5a2a970d-f07c-446c-9d63-5589e6a2d63d">
-                  <td id="JZ{A" class="" style="width: 156.5px">王浩屾</td>
-                  <td id="Nf{W" class="" style="width: 156.5px">
-                    后端开发（DBA + API接口）
-                  </td>
-                </tr>
-                <tr id="5ddb543c-9787-4dfc-bc71-e825b80f8f5b">
-                  <td id="JZ{A" class="" style="width: 156.5px">谢天赐</td>
-                  <td id="Nf{W" class="" style="width: 156.5px">
-                    后端开发（API接口）
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <p id="b304134c-ca4a-41e1-8fea-4ae0b0f20206" class=""></p>
-          </div>
-        </div>
-        <p id="909a2725-1a68-482a-bb19-5395c2760673" class="">
-          在综合考虑项目开发时间周期、项目开发难度、开发人员分配之后；我们小组选择了业务流程门槛较低的【宠物信息交流平台】
-        </p>
-        <p id="329f1e1a-73f3-4764-900e-21c4eaff3212" class="">
-          而我们小组，则取了一个有趣的名字 -【418TEAPOTS】
-        </p>
-        <figure id="8f986d51-da49-4445-a303-a8466a38e169" class="image">
-          <a href="image.png"><img style="width: 708px" src="image.png" /></a>
-          <figcaption>From mdn web docs - Web Dev should be fun!</figcaption>
-        </figure>
-        <h3 id="d1626bfb-011b-493c-ba01-2e9f32e15961" class="">
-          1.2. 项目周期（为期10天）
-        </h3>
-        <figure id="73e50f86-b34f-40bd-84fc-bcdceead183f" class="image">
-          <a href="lQLPKH7nXjGmzdPNAkzNBSCw4fZXUu3PJeAGtebNTP72AA_1312_588.png"
-            ><img
-              style="width: 1312px"
-              src="lQLPKH7nXjGmzdPNAkzNBSCw4fZXUu3PJeAGtebNTP72AA_1312_588.png"
-          /></a>
-        </figure>
-        <p id="a742d85f-6349-4510-b0eb-028e3db893fd" class="">
-          期间，上课为上午 08:05 -
-          11:50；虽然每天都是早八，但是这个上课时间对于项目的开发是有利的，因为早八能迫使我早起，从而一天能有更多的时间投入该项目（如果没有早八可能就会迟了一两个小时起床，而我晚上睡觉的时间基本相同，于是一天中能够利用的时间就多了这一两个小时）
-        </p>
-        <h3 id="6f89153c-f2b3-4951-abb1-94c950e66a42" class="">
-          1.3. 主要目标
-        </h3>
-        <ul id="96a3df8e-48de-49c2-a23c-dfdaf2cc443c" class="bulleted-list">
-          <li style="list-style-type: disc">
-            移动端（我负责的内容）
-            <ul id="8537bc5e-fb88-4019-a87d-32aef72a0352" class="bulleted-list">
-              <li style="list-style-type: circle">社区主页：能够刷帖子</li>
-            </ul>
-            <ul id="fbd3b7ab-d0aa-4134-9fda-4715ea92156b" class="bulleted-list">
-              <li style="list-style-type: circle">
-                帖子详情：能够看到帖子的详情内容
-                <ul
-                  id="5f48194d-00a7-4cb7-8190-c97a595f2bab"
-                  class="bulleted-list"
-                >
-                  <li style="list-style-type: square">
-                    评论区：新增评论、删除评论
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <ul id="94145edb-48c6-49d8-8f73-f72deb81f96e" class="bulleted-list">
-              <li style="list-style-type: circle">
-                新增帖子：用户信息、正文、图片、详情项（根据帖子类型的变化而变化）
-              </li>
-            </ul>
-            <ul id="c36592cb-1381-4f53-999c-205b8b5a9bc5" class="bulleted-list">
-              <li style="list-style-type: circle">
-                个人主页
-                <ul
-                  id="ead517c0-3d11-477b-a4f6-2447a35602b5"
-                  class="bulleted-list"
-                >
-                  <li style="list-style-type: square">
-                    用户信息：用户昵称、联系方式、头像（可更改）、个人简介
-                  </li>
-                </ul>
-                <ul
-                  id="0a4c8870-0e88-4ecc-bf7e-a4ac8b85e8b3"
-                  class="bulleted-list"
-                >
-                  <li style="list-style-type: square">
-                    个人动态：用户自己发过的帖子（可删除）
-                  </li>
-                </ul>
-                <ul
-                  id="49f31bdc-3392-4dde-bc8b-cc1af175b52b"
-                  class="bulleted-list"
-                >
-                  <li style="list-style-type: square">
-                    宠物画廊：图片+标题，用于展示用户的宠物照片
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul id="601f9fd1-325e-4bc6-8cd9-29913a52b83b" class="bulleted-list">
-          <li style="list-style-type: disc">
-            PC端（管理员界面，可以对帖子、用户、评论三个实体进行管理）
-          </li>
-        </ul>
-        <h2 id="db3922fb-fcbb-49e7-8ed5-6cbe9da6472a" class="">
-          2. 使用到的技术
-        </h2>
-        <div id="86058acb-ea31-45cb-b6cf-138b9e934e22" class="column-list">
-          <div
-            id="7341651e-9b8f-4a9b-b53f-6131119df94b"
-            style="width: 50%"
-            class="column"
-          >
-            <h3 id="cdb571ad-dd38-4d8d-a0d8-6a3f6612959f" class="">
-              2.1. 前端技术
-            </h3>
-            <table
-              id="1a04a787-1e15-4434-9b34-48749098dcc3"
-              class="simple-table"
-            >
-              <thead class="simple-table-header">
-                <tr id="33649a1d-bdd4-4703-abb1-10e1dc6a428e">
-                  <th
-                    id="bHVc"
-                    class="simple-table-header-color simple-table-header"
-                    style="width: 104.33333333333333px"
-                  ></th>
-                  <th
-                    id="hG?{"
-                    class="simple-table-header-color simple-table-header"
-                    style="width: 104.33333333333333px"
-                  >
-                    移动端
-                  </th>
-                  <th
-                    id="orQP"
-                    class="simple-table-header-color simple-table-header"
-                    style="width: 104.33333333333333px"
-                  >
-                    PC端
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr id="7350ec4a-33fd-4fd2-bce0-b14149ccc69f">
-                  <th
-                    id="bHVc"
-                    class="simple-table-header-color simple-table-header"
-                    style="width: 104.33333333333333px"
-                  >
-                    框架
-                  </th>
-                  <td id="hG?{" class="" style="width: 104.33333333333333px">
-                    Vue3
-                  </td>
-                  <td id="orQP" class="" style="width: 104.33333333333333px">
-                    React.js
-                  </td>
-                </tr>
-                <tr id="5f28021e-1e3b-4040-81d7-db2f83dc7dd4">
-                  <th
-                    id="bHVc"
-                    class="simple-table-header-color simple-table-header"
-                    style="width: 104.33333333333333px"
-                  >
-                    UI组件库
-                  </th>
-                  <td id="hG?{" class="" style="width: 104.33333333333333px">
-                    Vuetify + Element Plus
-                  </td>
-                  <td id="orQP" class="" style="width: 104.33333333333333px">
-                    Ant Design
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div
-            id="9a71b9e5-eaf4-4b7b-b4e0-d4779f1e139e"
-            style="width: 50%"
-            class="column"
-          >
-            <h3 id="1b43ee50-ef6f-482b-b6af-df3e75ecad28" class="">
-              2.2. 后端技术
-            </h3>
-            <ul id="6bc81ee1-765f-4c5d-9f54-10385b3a5b85" class="bulleted-list">
-              <li style="list-style-type: disc">数据库：SQL Sever</li>
-            </ul>
-            <ul id="a2b12cdb-cfb1-4a14-bd87-09916c67ab07" class="bulleted-list">
-              <li style="list-style-type: disc">框架：Springboot（JAVA）</li>
-            </ul>
-            <p id="5f1c67c9-0e5f-4c79-8981-1b3dfb02858f" class=""></p>
-          </div>
-        </div>
-        <h2 id="1bae48e7-6d4a-4ecd-bef0-cc459eaa4d61" class="">3. 项目阶段</h2>
-        <h3 id="0aaef009-fc59-4b19-a30f-f0077d13c4d7" class="">
-          3.1. 项目选题
-        </h3>
-        <p id="fe7abcc8-9462-4dcf-9331-74c847d4a8ee" class="">
-          按照老师的要求，该项目需要两份前端的工程（移动端和PC端），一份后端的工程；而我们的选题是【宠物信息交流平台】
-        </p>
-        <h3 id="4b686829-1bd3-45d3-8e49-092d97bcdf44" class="">
-          3.2. 需求分析
-        </h3>
-        <p id="cd7d3fdf-9792-40f5-ba4b-0200d7dda83e" class="">
-          在这个阶段，我们先通过竞品分析，了解了【宠物信息交流平台】的案例网站，以下为主要参考网站
-        </p>
-        <figure id="f32d96de-49b0-4a0a-a86c-5501d1147349">
-          <a href="https://www.chongyoushe.com/" class="bookmark source"
-            ><div class="bookmark-info">
-              <div class="bookmark-text">
-                <div class="bookmark-title">
-                  全国宠友互助社区 -
-                  免费宠物领养_寻猫启示_寻狗启事_犬猫配种宠物平台
-                </div>
-                <div class="bookmark-description">
-                  宠友社旗下的全国宠友互助社区论坛！在这里，你可以发布或浏览宠物领养、宠物走失、宠物寻主、宠物配种、有偿转让、二手交易、爱心急救、宠友租房等互助信息，得到帮助或帮助宠友，还可以和同城宠友实时沟通交流、阅读本地宠物圈最新资讯与养宠经验、查看附近宠物商家解决养宠需求等...
-                </div>
-              </div>
-              <div class="bookmark-href">https://www.chongyoushe.com/</div>
-            </div></a
-          >
-        </figure>
-        <figure id="6d8cb6a6-3db8-4ff6-949d-88ee1ed6a2bd">
-          <a href="https://www.lovepet.cn/" class="bookmark source"
-            ><div class="bookmark-info">
-              <div class="bookmark-text">
-                <div class="bookmark-title">
-                  爱宠网 - 有爱有趣有用的宠物门户网站！
-                </div>
-                <div class="bookmark-description">
-                  爱宠网（www.lovepet.cn）,一个有爱、有趣又有用的宠物网站。为广大爱宠网友提供养宠知识,宠物故事,宠物趣味,宠物百科,宠物大全,宠物医疗,宠物美图,宠物养护,宠物美容,宠物训练,疾病导航等全方面养宠知识信息。
-                </div>
-              </div>
-              <div class="bookmark-href">
-                <img
-                  src="https://www.lovepet.cn/favicon.ico"
-                  class="icon bookmark-icon"
-                />https://www.lovepet.cn/
-              </div>
-            </div></a
-          >
-        </figure>
-        <p id="90bdf50e-fe16-4bea-8524-68a59c70496a" class="">
-          经过一番研究之后，我们大概了解了该类网站的业务逻辑：PC端负责展示帖子的信息，而发布帖子的功能是在移动端通过微信小程序的形式进行使用（发布帖子的时候网站需要用户扫描二维码）
-        </p>
-        <p id="d3865800-da0b-408d-9f7f-e2be24491773" class="">
-          尽管我们分析的竞品是这种业务逻辑，我们小组在讨论之后则打算采用另外一种方案，即在移动端实现用户操作的所有功能（包括发布帖子），在PC端做一个管理员后台。
-        </p>
-        <p id="86de35a7-ff81-4fa8-b474-85b05efb731a" class="">
-          当然，这和老师给我们的解释也有关系；因为短学期的项目目的是使尽可能多的同学参与开发当中。因此，要是PC端和移动端的功能耦合程度大，无论是对于开发难度还是用户使用体验程度而言都是不适合的。
-        </p>
-        <h3 id="a3cfcfb4-28a4-4759-9463-15c28def4ab5" class="">
-          3.3. 方案设计
-        </h3>
-        <p id="80e0d582-17d7-45ca-b960-53f796388baa" class="">
-          本阶段，是原型的设计阶段；为了能够推动项目的快速进展，我们在画原型的时候采用了笔绘，省去了使用原型工具时对于样式的过度纠结，专注于设计各个界面如何对各种数据进行展示。
-        </p>
-        <blockquote id="cb6cf52a-93fb-458f-95bf-c4630da3e09e" class="">
-          移动端的原型设计（笔绘版）
-        </blockquote>
-        <div id="5a3414f5-7551-4a9d-9680-5398130099d8" class="column-list">
-          <div
-            id="544f5c07-f841-4cb6-9d61-8ca2dd8c15fb"
-            style="width: 20%"
-            class="column"
-          >
-            <figure id="6aec220b-e713-4a31-9b1e-1e57a8e18b34" class="image">
-              <a
-                href="%25E5%258F%2591%25E8%25A1%25A8%25E5%25B8%2596%25E5%25AD%2590.jpeg"
-                ><img
-                  style="width: 960px"
-                  src="%25E5%258F%2591%25E8%25A1%25A8%25E5%25B8%2596%25E5%25AD%2590.jpeg"
-              /></a>
-              <figcaption>发表帖子界面</figcaption>
-            </figure>
-          </div>
-          <div
-            id="dbe51835-227b-4ec6-9942-68ea072b7a6e"
-            style="width: 20%"
-            class="column"
-          >
-            <figure id="a8e41303-28dd-41f5-b1d4-e550c539ec08" class="image">
-              <a
-                href="%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258A%25A8%25E6%2580%2581.jpg"
-                ><img
-                  style="width: 104.79167175292969px"
-                  src="%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258A%25A8%25E6%2580%2581.jpg"
-              /></a>
-              <figcaption>个人动态界面</figcaption>
-            </figure>
-          </div>
-          <div
-            id="2e59bd17-7185-420b-a7b0-480e8db8ddc1"
-            style="width: 20%"
-            class="column"
-          >
-            <figure id="df0c494e-1390-40c0-beda-76ade6ba31d0" class="image">
-              <a
-                href="%25E7%25A4%25BE%25E5%258C%25BA%25E4%25B8%25BB%25E9%25A1%25B5.jpg"
-                ><img
-                  style="width: 104.79167175292969px"
-                  src="%25E7%25A4%25BE%25E5%258C%25BA%25E4%25B8%25BB%25E9%25A1%25B5.jpg"
-              /></a>
-              <figcaption>社区主页界面</figcaption>
-            </figure>
-          </div>
-          <div
-            id="a100e99c-e371-4c85-b1b3-5078d1868b64"
-            style="width: 20%"
-            class="column"
-          >
-            <figure id="7f3525ef-6cce-47cd-bb4c-8500f0fceb9b" class="image">
-              <a
-                href="%25E5%25B8%2596%25E5%25AD%2590%25E8%25AF%25A6%25E6%2583%2585.jpeg"
-                ><img
-                  style="width: 104.79167175292969px"
-                  src="%25E5%25B8%2596%25E5%25AD%2590%25E8%25AF%25A6%25E6%2583%2585.jpeg"
-              /></a>
-              <figcaption>帖子详情界面</figcaption>
-            </figure>
-          </div>
-          <div
-            id="38cb1153-20a1-4d6e-9a20-9b5fba1522ae"
-            style="width: 20%"
-            class="column"
-          >
-            <figure id="ba0bf8a7-6269-410a-9572-12c55c0dc679" class="image">
-              <a
-                href="%25E7%2594%25A8%25E6%2588%25B7%25E7%2599%25BB%25E5%25BD%2595.jpg"
-                ><img
-                  style="width: 960px"
-                  src="%25E7%2594%25A8%25E6%2588%25B7%25E7%2599%25BB%25E5%25BD%2595.jpg"
-              /></a>
-              <figcaption>用户登录界面</figcaption>
-            </figure>
-          </div>
-        </div>
-        <p id="f770eb2e-21e6-4921-b03e-9a9a90c3685b" class="">
-          当然，笔绘版本的原型设计稿出来之后，我们的项目经理为我们完成了Axure的原型设计
-        </p>
-        <h3 id="dad7307d-2306-4d99-abb3-1ed3b36787a4" class="">
-          3.4. 详细设计
-        </h3>
-        <div id="1674f4bc-db11-4c07-9d5f-58c5ed438c1c" class="column-list">
-          <div
-            id="23d04cad-fa6d-43bc-9011-c1324ef319d2"
-            style="width: 50%"
-            class="column"
-          >
-            <blockquote id="7194b9f2-3f29-4c73-b9a6-dcc1635de6e5" class="">
-              API文档的导出
-            </blockquote>
-          </div>
-          <div
-            id="3ae43dbc-6d3f-45be-ab54-53fbdc9e6eee"
-            style="width: 50%"
-            class="column"
-          >
-            <figure id="2998d514-8ffe-4a7e-bd6c-977a8401ae15">
-              <div class="source">
-                <a href="%25E6%2596%25B0API%25E6%2596%2587%25E6%25A1%25A3.pdf"
-                  >新API文档.pdf</a
-                >
-              </div>
-            </figure>
-          </div>
-        </div>
-        <p id="5878400d-aecd-4078-9e39-88c6af2c76de" class="">
-          在原型确定下来之后，前端需要的数据项也就明确了，于是我们就开始了API的设计；于此同时，我们小组成立了飞书的组织，因为我认为使用云文档进行API文档的书写能够提高团队的沟通效率：团队中的所有成员能够实时对文档中变化的内容进行查看并且进行修改（除了短学期的上课时间，我们团队中的成员大部分时间是分开办公的，因此在开发过程中如果对某些数据项或返回信息的要求有变更，就能够通过API云文档进行即时的修改与反馈）
-        </p>
-        <h3 id="5ee35ea8-9ffd-4dbf-87ac-967d0c712c1e" class="">
-          3.5. 代码开发
-        </h3>
-        <p id="fc1f667f-3267-4334-8bb0-b8bcaeaa54bd" class="">
-          API的规范定好之后，我就开始了前端界面代码的编写。对我来说，这个阶段是整个项目中耗时最长的；其中不仅包括了UI样式布局的分配（Vuetify提供style
-          api其实帮了很多忙，大部分情况下不用手搓css），还有涉及到UX的操作逻辑和数据的动态响应和DOM的动态渲染等，大致算下来使用了6天时间来完成了大部分前端代码的编写。
-        </p>
-        <p id="91e67bea-a924-4f69-8a28-be660588b700" class="">
-          在此过程中，我使用的是【模拟数据】和【Postman】的【Mock
-          Server】进行单元测试。
-        </p>
-        <h3 id="a613e0c2-7614-4093-98c4-e89b28c21677" class="">
-          3.6. 集成测试
-        </h3>
-        <p id="b1f3f5eb-00b0-494f-9533-f4e1c2043bc1" class="">
-          这是最痛苦的一个阶段，但同时也是整个项目正式成型的阶段。通过连接后端的服务器，我们对数据的拿取做到了动态的响应；于此同时，我们也发现了之前API设计的某些缺陷和不足，进行了修改。最重要的是我们对程序进行了debug，发现了许多漏洞，并及时地进行了更改。
-        </p>
-        <p id="61fbaa6a-8df1-4a89-8d14-44d1cfc48cc5" class="">
-          在确定程序基本没有问题之后，小组的其它成员下载了我的代码，并连接后端服务器进行了最终展示数据的录入。
-        </p>
-        <h3 id="2a9475c9-4e85-4500-875a-068a921c6447" class="">
-          3.7. 系统实施
-        </h3>
-        <p id="1224644e-bea4-4b44-b85e-a7863e9517e5" class="">
-          项目的最终验收。在演示的过程中，老师针对项目的不同模块给出了相应的改善建议。
-        </p>
-        <h2 id="88a3a736-995c-4fec-b315-3b873e7f0a1d" class="">4. 项目亮点</h2>
-        <ul id="327bd0ff-f309-416b-9a60-ff6201b67fd5" class="bulleted-list">
-          <li style="list-style-type: disc">
-            在显示详情信息时，应用会根据帖子的不同类型进行相应的图标映射，提升了用户的使用体验
-          </li>
-        </ul>
-        <ul id="8540281f-c45a-4419-9d90-f0bb5774c5f3" class="bulleted-list">
-          <li style="list-style-type: disc">
-            在不同界面展示帖子使用了不同的布局
-            <ul id="08caf8bd-389d-4cc5-9554-da5b3001d4f5" class="bulleted-list">
-              <li style="list-style-type: circle">
-                社区界面：用户可见范围内只有一张显示帖子的卡片，可以提高用户刷帖子的沉浸式体验
-              </li>
-            </ul>
-            <ul id="a13bca2e-09fc-44a8-ad9b-51dbfbfc43a3" class="bulleted-list">
-              <li style="list-style-type: circle">
-                个人动态：在屏幕视口宽度的范围内展示两张帖子的卡片，方便用户进行帖子的管理
-              </li>
-            </ul>
-            <ul id="90049050-08d3-4dc9-8abe-aa118884e700" class="bulleted-list">
-              <li style="list-style-type: circle">
-                宠物画廊：以九宫格的形式进行呈现，顾名思义”画廊“
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul id="39359de5-5ebc-42ae-85d5-5f208f773fa3" class="bulleted-list">
-          <li style="list-style-type: disc">
-            通过无限滚动，进行社区界面中帖子展示的分页，优化了系统性能
-          </li>
-        </ul>
-        <h2 id="64d2109c-9ce6-4c56-b141-765d79deab86" class="">
-          5. 遇到的困难 &amp; 解决方法 &amp; 学到的经验
-        </h2>
-        <h3 id="0ccb8e02-11c8-4e41-8836-568100d6a589" class="">
-          5.1. 移动端的UI/UX设计
-        </h3>
-        <p id="ea929880-d407-4d71-8f4d-1dd4ba7452cd" class="">
-          由于我之前做的项目都是适配PC端的，也没有做响应式设计；因此，这次的项目是我第一次做适配移动端的web
-          app。尽管移动端和PC端的web
-          app使用的前端技术栈基本相同（做的不是原生app），这两者的UI/UX上还是有很大区别的。
-        </p>
-        <p id="cd76775d-8130-42e1-807c-4c36c11774a1" class="">
-          考虑到PC端有较大的屏幕宽度，页面信息基本能够以平摊的方式来展示出来，使用滚动条的频率也相对小；而对于屏幕宽度窄，高度长的移动端设备来说，要尽可能充分利用此特点的方式就是增加用户划动界面的频率（即PC端的滚动条）。
-        </p>
-        <p id="e4d2c790-de59-4230-acda-4cac5eba6b93" class="">
-          这里就涉及到了移动端界面的无限滚动功能。一开始我认为该功能实现困难，因为也许需要涉及使用队列来进行帖子DOM的动态变化（在往下刷帖子的时候，上面刷过的帖子要消失）
-        </p>
-        <p id="8dafec9b-5d7f-47cb-bebd-19f95fa3c6fe" class="">
-          但是事实证明，我的担心来自我对于移动端交互实现的不熟悉。与PC端的分页功能不同（每次点击下一页的时候展示当前一整页的内容，而不展示前一页的内容）；对于移动端，在获取下一个分页的内容之后，前一个分页的内容还是存在的，并不需要移除。而Vuetify中也是提供了无限滚动的控件，只需要定义当用户划到页面底端时触发的函数即可。
-        </p>
-        <p id="cae86173-7fb7-49a6-9b02-1ed0b4b99244" class="">
-          除此之外，与PC端的顶部导航栏不同的是，大多数移动端应用的导航栏位于屏幕底部。
-        </p>
-        <hr id="355a7d4b-0332-453e-b0c3-83de0268659d" />
-        <blockquote id="763ebeff-8f5f-41da-bb78-12bb18a07a55" class="">
-          参考界面的截图（帖子）
-        </blockquote>
-        <div id="2148cb0e-0ee8-4e8d-a006-9636054388e2" class="column-list">
-          <div
-            id="6589c182-dd96-4b56-8fe3-75ab9448cd69"
-            style="width: 33.33333333333333%"
-            class="column"
-          >
-            <figure id="091ab2f0-5863-477a-bfbc-4dbfc3514a93" class="image">
-              <a href="ins.jpg"><img style="width: 1170px" src="ins.jpg" /></a>
-              <figcaption>Instagram</figcaption>
-            </figure>
-          </div>
-          <div
-            id="18d8e152-d716-44b1-86b5-5a5d22e7262f"
-            style="width: 33.33333333333333%"
-            class="column"
-          >
-            <figure id="1dbf0c85-2679-4a64-8eed-af05f6f5338e" class="image">
-              <a href="%25E9%2597%25B2%25E9%25B1%25BC.jpg"
-                ><img
-                  style="width: 1170px"
-                  src="%25E9%2597%25B2%25E9%25B1%25BC.jpg"
-              /></a>
-              <figcaption>闲鱼</figcaption>
-            </figure>
-          </div>
-          <div
-            id="0b28f12e-44b1-4c5f-94ec-bd22d2bf8531"
-            style="width: 33.33333333333333%"
-            class="column"
-          >
-            <figure id="745b6e28-a8c1-464b-a3a4-bc6f8920c63a" class="image">
-              <a href="%25E5%25B0%258F%25E7%25BA%25A2%25E4%25B9%25A6.jpg"
-                ><img
-                  style="width: 1170px"
-                  src="%25E5%25B0%258F%25E7%25BA%25A2%25E4%25B9%25A6.jpg"
-              /></a>
-              <figcaption>小红书</figcaption>
-            </figure>
-          </div>
-        </div>
-        <p id="12149338-2882-40a2-9f73-880a660973e9" class="">
-          在对此类界面的原型设计过程中，我参考了当前主流社交app界面的交互方式。研究之后，我发现大部分帖子是使用了【卡片】这一控件对内容进行展示，并且图片的占比较大。相应的，在Vuetify中，就需要使用Card与Carousel控件相结合。
-        </p>
-        <hr id="a704aa89-937f-47ee-a2b5-1c779ca8812c" />
-        <blockquote id="16c288b6-4adc-48f9-b50b-ed995532f9c5" class="">
-          参考界面的截图（输入）
-        </blockquote>
-        <div id="b596ef6d-a199-45ca-9624-98bd5cd3eae2" class="column-list">
-          <div
-            id="da30f6ec-de07-40c0-b473-fe317f125947"
-            style="width: 33.33333333333333%"
-            class="column"
-          >
-            <figure id="eec4a552-c41f-4e34-b1be-6eab86ef34e4" class="image">
-              <a href="ins1.jpg"
-                ><img style="width: 1170px" src="ins1.jpg"
-              /></a>
-              <figcaption>Instagram</figcaption>
-            </figure>
-          </div>
-          <div
-            id="a51e571f-755d-4315-aa86-2a71255e1c77"
-            style="width: 33.33333333333333%"
-            class="column"
-          >
-            <figure id="edf67a19-7007-4c08-b40f-fed54ffbffc0" class="image">
-              <a href="%25E9%2597%25B2%25E9%25B1%25BC1.jpg"
-                ><img
-                  style="width: 1170px"
-                  src="%25E9%2597%25B2%25E9%25B1%25BC1.jpg"
-              /></a>
-              <figcaption>闲鱼</figcaption>
-            </figure>
-          </div>
-          <div
-            id="b729a07e-cffe-4c23-85f7-4d17f5e56027"
-            style="width: 33.33333333333333%"
-            class="column"
-          >
-            <figure id="f8cc005b-2a84-4e18-97ad-db88912a8699" class="image">
-              <a href="%25E5%25B0%258F%25E7%25BA%25A2%25E4%25B9%25A61.jpg"
-                ><img
-                  style="width: 1170px"
-                  src="%25E5%25B0%258F%25E7%25BA%25A2%25E4%25B9%25A61.jpg"
-              /></a>
-              <figcaption>小红书</figcaption>
-            </figure>
-          </div>
-        </div>
-        <p id="8f49dcc9-8d50-4d13-9070-a8d59a5753ca" class="">
-          对于类表单输入的控件，则是大多数使用弹窗的形式使用户进行输入内容，与PC端的表单控件相比就更为复杂。要解决该功能，就需要添加更多的响应式变量。相应的，在Vue3中，就需要使用更多的ref/reactive或computed钩子来与html元素进行绑定Vuetify中的Sheet控件的可见性与数据保存。
-        </p>
-        <h3 id="b39c773c-ff43-49bd-a113-46f761c6eed6" class="">
-          5.2. 遇到的Bugs
-        </h3>
-        <p id="e14128f6-1f4d-406d-a12b-2c512e7c5210" class="">
-          在集成测试阶段，我们使用不同用户进行登录登出的时候遇到了会登进错误用户账号的情况；经过分析，我发现了是由于我将一个动态的axios
-          config参数（把jwt令牌放进请求的headers中）存入了环境变量中进行引用来使用，导致每次从config文件中get到的Cookie都是之前留存在浏览器中的，无法即时更新，导致此Bug的出现。
-        </p>
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-          integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        ></script>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-          integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        />
-        <pre
-          id="59fbd4bc-4eac-4849-bd7e-a4216f0c28f4"
-          class="code"
-        ><code class="language-JavaScript">import Cookies from &quot;js-cookie&quot;;
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>心得体会</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="56d788aa-f334-4e21-9d77-3221db62d502" class="page sans"><header><h1 class="page-title">心得体会</h1><p class="page-description"></p></header><div class="page-body"><h1 id="90853985-322e-4645-8ed6-27586ce309e8" class="">软件开发实践 2</h1><ul id="6c1b822a-7640-404a-95e7-592142ffa56d" class="bulleted-list"><li style="list-style-type:disc">授课教师：吴以凡</li></ul><ul id="38e648c6-9ddd-477b-9fce-cb6553e37a6a" class="bulleted-list"><li style="list-style-type:disc">时间：2024.08.27 - 2024.09.05</li></ul><ul id="489b3853-0db5-468f-935e-a9dee63339b0" class="bulleted-list"><li style="list-style-type:disc">文档撰写者：22050208 - 黄子烨</li></ul><h2 id="a1ce8efa-812d-4e74-85d1-87fbcb02e2ae" class="">1. 项目总览</h2><h3 id="c12615ca-787c-4fb7-83f4-140addd409c2" class="">1.1. 项目选题</h3><p id="148225d7-3807-4978-b212-e89b13bcf61f" class="">在本次短学期下发任务的安排来看，我们需要从老师提供9个题目中选出一个，作为将要完成的项目；而从人员分配上来看，我们团队有5个人，每个人都分配到了不同的任务：</p><div id="3290ca37-bc46-48b1-81ed-0eb76da752e6" class="column-list"><div id="be346c4a-98f3-4ca5-a6d0-69765754e1ce" style="width:50%" class="column"><table id="1f57b133-9cb6-4abe-a746-99b36c99268e" class="simple-table"><thead class="simple-table-header"><tr id="8c916a02-4a5a-43a2-b776-397b249dca8d"><th id="hd^g" class="simple-table-header-color simple-table-header" style="width:313px">具体项目名称</th></tr></thead><tbody><tr id="2f64f101-8623-439f-bbb5-045a76e02a9e"><td id="hd^g" class="" style="width:313px">团队任务协作系统</td></tr><tr id="b311e786-3e74-4cc1-96b4-08d0f14e9f1e"><td id="hd^g" class="" style="width:313px">在线题库与组卷系统</td></tr><tr id="40a71331-7011-4e3e-90d5-93279291e498"><td id="hd^g" class="" style="width:313px">在线学习平台</td></tr><tr id="748e2896-d9f3-42c0-ba5f-fca6c1922d06"><td id="hd^g" class="" style="width:313px">校园二手交易系统</td></tr><tr id="6809c996-26fe-40d8-abe0-0f240f1456bd"><td id="hd^g" class="" style="width:313px">设施报修管理系统</td></tr><tr id="feea4a59-64d8-4ab9-824b-e5929ca44ea9"><td id="hd^g" class="" style="width:313px"><mark class="highlight-teal_background">宠物信息交流平台</mark></td></tr><tr id="bb8ff822-e5b8-4906-a26a-87d33710b649"><td id="hd^g" class="" style="width:313px">旅游管理系统</td></tr><tr id="d3a8434b-df8d-4e8a-aa63-2b9f854e511f"><td id="hd^g" class="" style="width:313px">在线招聘系统</td></tr><tr id="07770883-dbff-4804-bce9-c7ed496e9b56"><td id="hd^g" class="" style="width:313px">AI驱动的客户支持系统</td></tr></tbody></table></div><div id="c140e1a6-124d-4ab3-a997-e81e001b4e19" style="width:50%" class="column"><table id="deeb63d2-af0b-44ba-b581-b99f27384982" class="simple-table"><thead class="simple-table-header"><tr id="d201faa8-9cfb-4626-9d8b-d962bac79538"><th id="JZ{A" class="simple-table-header-color simple-table-header" style="width:156.5px">开发人员</th><th id="Nf{W" class="simple-table-header-color simple-table-header" style="width:156.5px">具体任务</th></tr></thead><tbody><tr id="fc55e195-6cc4-4bf9-b1c8-49d58acda5c8"><td id="JZ{A" class="" style="width:156.5px">楼乐天</td><td id="Nf{W" class="" style="width:156.5px">项目经理、测试人员、文档撰写</td></tr><tr id="32f737ea-17bb-4fda-af7b-ea06f076b1f3"><td id="JZ{A" class="" style="width:156.5px">吴佳哲</td><td id="Nf{W" class="" style="width:156.5px">前端开发（PC端）</td></tr><tr id="9f1441b8-62c1-4303-8976-51cab12201a6"><td id="JZ{A" class="" style="width:156.5px">黄子烨</td><td id="Nf{W" class="" style="width:156.5px">前端开发（移动端） </td></tr><tr id="5a2a970d-f07c-446c-9d63-5589e6a2d63d"><td id="JZ{A" class="" style="width:156.5px">王浩屾</td><td id="Nf{W" class="" style="width:156.5px">后端开发（DBA + API接口）</td></tr><tr id="5ddb543c-9787-4dfc-bc71-e825b80f8f5b"><td id="JZ{A" class="" style="width:156.5px">谢天赐</td><td id="Nf{W" class="" style="width:156.5px">后端开发（API接口）</td></tr></tbody></table><p id="b304134c-ca4a-41e1-8fea-4ae0b0f20206" class="">
+</p></div></div><p id="909a2725-1a68-482a-bb19-5395c2760673" class="">在综合考虑项目开发时间周期、项目开发难度、开发人员分配之后；我们小组选择了业务流程门槛较低的【宠物信息交流平台】</p><p id="329f1e1a-73f3-4764-900e-21c4eaff3212" class="">而我们小组，则取了一个有趣的名字 -【418TEAPOTS】</p><figure id="8f986d51-da49-4445-a303-a8466a38e169" class="image"><a href="image.png"><img style="width:708px" src="image.png"/></a><figcaption>From mdn web docs - Web Dev should be fun!</figcaption></figure><h3 id="d1626bfb-011b-493c-ba01-2e9f32e15961" class="">1.2. 项目周期（为期10天）</h3><figure id="73e50f86-b34f-40bd-84fc-bcdceead183f" class="image"><a href="lQLPKH7nXjGmzdPNAkzNBSCw4fZXUu3PJeAGtebNTP72AA_1312_588.png"><img style="width:1312px" src="lQLPKH7nXjGmzdPNAkzNBSCw4fZXUu3PJeAGtebNTP72AA_1312_588.png"/></a></figure><p id="a742d85f-6349-4510-b0eb-028e3db893fd" class="">期间，上课为上午 08:05 - 11:50；虽然每天都是早八，但是这个上课时间对于项目的开发是有利的，因为早八能迫使我早起，从而一天能有更多的时间投入该项目（如果没有早八可能就会迟了一两个小时起床，而我晚上睡觉的时间基本相同，于是一天中能够利用的时间就多了这一两个小时）</p><h3 id="6f89153c-f2b3-4951-abb1-94c950e66a42" class="">1.3. 主要目标</h3><ul id="96a3df8e-48de-49c2-a23c-dfdaf2cc443c" class="bulleted-list"><li style="list-style-type:disc">移动端（我负责的内容）<ul id="8537bc5e-fb88-4019-a87d-32aef72a0352" class="bulleted-list"><li style="list-style-type:circle">社区主页：能够刷帖子</li></ul><ul id="fbd3b7ab-d0aa-4134-9fda-4715ea92156b" class="bulleted-list"><li style="list-style-type:circle">帖子详情：能够看到帖子的详情内容<ul id="5f48194d-00a7-4cb7-8190-c97a595f2bab" class="bulleted-list"><li style="list-style-type:square">评论区：新增评论、删除评论</li></ul></li></ul><ul id="94145edb-48c6-49d8-8f73-f72deb81f96e" class="bulleted-list"><li style="list-style-type:circle">新增帖子：用户信息、正文、图片、详情项（根据帖子类型的变化而变化）</li></ul><ul id="c36592cb-1381-4f53-999c-205b8b5a9bc5" class="bulleted-list"><li style="list-style-type:circle">个人主页<ul id="ead517c0-3d11-477b-a4f6-2447a35602b5" class="bulleted-list"><li style="list-style-type:square">用户信息：用户昵称、联系方式、头像（可更改）、个人简介</li></ul><ul id="0a4c8870-0e88-4ecc-bf7e-a4ac8b85e8b3" class="bulleted-list"><li style="list-style-type:square">个人动态：用户自己发过的帖子（可删除）</li></ul><ul id="49f31bdc-3392-4dde-bc8b-cc1af175b52b" class="bulleted-list"><li style="list-style-type:square">宠物画廊：图片+标题，用于展示用户的宠物照片</li></ul></li></ul></li></ul><ul id="601f9fd1-325e-4bc6-8cd9-29913a52b83b" class="bulleted-list"><li style="list-style-type:disc">PC端（管理员界面，可以对帖子、用户、评论三个实体进行管理）</li></ul><h2 id="db3922fb-fcbb-49e7-8ed5-6cbe9da6472a" class="">2. 使用到的技术</h2><div id="86058acb-ea31-45cb-b6cf-138b9e934e22" class="column-list"><div id="7341651e-9b8f-4a9b-b53f-6131119df94b" style="width:50%" class="column"><h3 id="cdb571ad-dd38-4d8d-a0d8-6a3f6612959f" class="">2.1. 前端技术</h3><table id="1a04a787-1e15-4434-9b34-48749098dcc3" class="simple-table"><thead class="simple-table-header"><tr id="33649a1d-bdd4-4703-abb1-10e1dc6a428e"><th id="bHVc" class="simple-table-header-color simple-table-header" style="width:104.33333333333333px"></th><th id="hG?{" class="simple-table-header-color simple-table-header" style="width:104.33333333333333px">移动端</th><th id="orQP" class="simple-table-header-color simple-table-header" style="width:104.33333333333333px">PC端</th></tr></thead><tbody><tr id="7350ec4a-33fd-4fd2-bce0-b14149ccc69f"><th id="bHVc" class="simple-table-header-color simple-table-header" style="width:104.33333333333333px">框架</th><td id="hG?{" class="" style="width:104.33333333333333px">Vue3</td><td id="orQP" class="" style="width:104.33333333333333px">React.js</td></tr><tr id="5f28021e-1e3b-4040-81d7-db2f83dc7dd4"><th id="bHVc" class="simple-table-header-color simple-table-header" style="width:104.33333333333333px">UI组件库</th><td id="hG?{" class="" style="width:104.33333333333333px">Vuetify + Element Plus</td><td id="orQP" class="" style="width:104.33333333333333px">Ant Design</td></tr></tbody></table></div><div id="9a71b9e5-eaf4-4b7b-b4e0-d4779f1e139e" style="width:50%" class="column"><h3 id="1b43ee50-ef6f-482b-b6af-df3e75ecad28" class="">2.2. 后端技术</h3><ul id="6bc81ee1-765f-4c5d-9f54-10385b3a5b85" class="bulleted-list"><li style="list-style-type:disc">数据库：SQL Sever</li></ul><ul id="a2b12cdb-cfb1-4a14-bd87-09916c67ab07" class="bulleted-list"><li style="list-style-type:disc">框架：Springboot（JAVA）</li></ul><p id="5f1c67c9-0e5f-4c79-8981-1b3dfb02858f" class="">
+</p></div></div><h2 id="1bae48e7-6d4a-4ecd-bef0-cc459eaa4d61" class="">3. 项目阶段</h2><h3 id="0aaef009-fc59-4b19-a30f-f0077d13c4d7" class="">3.1. 项目选题</h3><p id="fe7abcc8-9462-4dcf-9331-74c847d4a8ee" class="">按照老师的要求，该项目需要两份前端的工程（移动端和PC端），一份后端的工程；而我们的选题是【宠物信息交流平台】</p><h3 id="4b686829-1bd3-45d3-8e49-092d97bcdf44" class="">3.2. 需求分析</h3><p id="cd7d3fdf-9792-40f5-ba4b-0200d7dda83e" class="">在这个阶段，我们先通过竞品分析，了解了【宠物信息交流平台】的案例网站，以下为主要参考网站</p><figure id="f32d96de-49b0-4a0a-a86c-5501d1147349"><a href="https://www.chongyoushe.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">全国宠友互助社区 - 免费宠物领养_寻猫启示_寻狗启事_犬猫配种宠物平台</div><div class="bookmark-description">宠友社旗下的全国宠友互助社区论坛！在这里，你可以发布或浏览宠物领养、宠物走失、宠物寻主、宠物配种、有偿转让、二手交易、爱心急救、宠友租房等互助信息，得到帮助或帮助宠友，还可以和同城宠友实时沟通交流、阅读本地宠物圈最新资讯与养宠经验、查看附近宠物商家解决养宠需求等...</div></div><div class="bookmark-href">https://www.chongyoushe.com/</div></div></a></figure><figure id="6d8cb6a6-3db8-4ff6-949d-88ee1ed6a2bd"><a href="https://www.lovepet.cn/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">爱宠网 - 有爱有趣有用的宠物门户网站！</div><div class="bookmark-description">爱宠网（www.lovepet.cn）,一个有爱、有趣又有用的宠物网站。为广大爱宠网友提供养宠知识,宠物故事,宠物趣味,宠物百科,宠物大全,宠物医疗,宠物美图,宠物养护,宠物美容,宠物训练,疾病导航等全方面养宠知识信息。</div></div><div class="bookmark-href"><img src="https://www.lovepet.cn/favicon.ico" class="icon bookmark-icon"/>https://www.lovepet.cn/</div></div></a></figure><p id="90bdf50e-fe16-4bea-8524-68a59c70496a" class="">经过一番研究之后，我们大概了解了该类网站的业务逻辑：PC端负责展示帖子的信息，而发布帖子的功能是在移动端通过微信小程序的形式进行使用（发布帖子的时候网站需要用户扫描二维码）</p><p id="d3865800-da0b-408d-9f7f-e2be24491773" class="">尽管我们分析的竞品是这种业务逻辑，我们小组在讨论之后则打算采用另外一种方案，即在移动端实现用户操作的所有功能（包括发布帖子），在PC端做一个管理员后台。</p><p id="86de35a7-ff81-4fa8-b474-85b05efb731a" class="">当然，这和老师给我们的解释也有关系；因为短学期的项目目的是使尽可能多的同学参与开发当中。因此，要是PC端和移动端的功能耦合程度大，无论是对于开发难度还是用户使用体验程度而言都是不适合的。</p><h3 id="a3cfcfb4-28a4-4759-9463-15c28def4ab5" class="">3.3. 方案设计</h3><p id="80e0d582-17d7-45ca-b960-53f796388baa" class="">本阶段，是原型的设计阶段；为了能够推动项目的快速进展，我们在画原型的时候采用了笔绘，省去了使用原型工具时对于样式的过度纠结，专注于设计各个界面如何对各种数据进行展示。</p><blockquote id="cb6cf52a-93fb-458f-95bf-c4630da3e09e" class="">移动端的原型设计（笔绘版）</blockquote><div id="5a3414f5-7551-4a9d-9680-5398130099d8" class="column-list"><div id="544f5c07-f841-4cb6-9d61-8ca2dd8c15fb" style="width:20%" class="column"><figure id="6aec220b-e713-4a31-9b1e-1e57a8e18b34" class="image"><a href="%25E5%258F%2591%25E8%25A1%25A8%25E5%25B8%2596%25E5%25AD%2590.jpeg"><img style="width:960px" src="%25E5%258F%2591%25E8%25A1%25A8%25E5%25B8%2596%25E5%25AD%2590.jpeg"/></a><figcaption>发表帖子界面</figcaption></figure></div><div id="dbe51835-227b-4ec6-9942-68ea072b7a6e" style="width:20%" class="column"><figure id="a8e41303-28dd-41f5-b1d4-e550c539ec08" class="image"><a href="%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258A%25A8%25E6%2580%2581.jpg"><img style="width:104.79167175292969px" src="%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258A%25A8%25E6%2580%2581.jpg"/></a><figcaption>个人动态界面</figcaption></figure></div><div id="2e59bd17-7185-420b-a7b0-480e8db8ddc1" style="width:20%" class="column"><figure id="df0c494e-1390-40c0-beda-76ade6ba31d0" class="image"><a href="%25E7%25A4%25BE%25E5%258C%25BA%25E4%25B8%25BB%25E9%25A1%25B5.jpg"><img style="width:104.79167175292969px" src="%25E7%25A4%25BE%25E5%258C%25BA%25E4%25B8%25BB%25E9%25A1%25B5.jpg"/></a><figcaption>社区主页界面</figcaption></figure></div><div id="a100e99c-e371-4c85-b1b3-5078d1868b64" style="width:20%" class="column"><figure id="7f3525ef-6cce-47cd-bb4c-8500f0fceb9b" class="image"><a href="%25E5%25B8%2596%25E5%25AD%2590%25E8%25AF%25A6%25E6%2583%2585.jpeg"><img style="width:104.79167175292969px" src="%25E5%25B8%2596%25E5%25AD%2590%25E8%25AF%25A6%25E6%2583%2585.jpeg"/></a><figcaption>帖子详情界面</figcaption></figure></div><div id="38cb1153-20a1-4d6e-9a20-9b5fba1522ae" style="width:20%" class="column"><figure id="ba0bf8a7-6269-410a-9572-12c55c0dc679" class="image"><a href="%25E7%2594%25A8%25E6%2588%25B7%25E7%2599%25BB%25E5%25BD%2595.jpg"><img style="width:960px" src="%25E7%2594%25A8%25E6%2588%25B7%25E7%2599%25BB%25E5%25BD%2595.jpg"/></a><figcaption>用户登录界面</figcaption></figure></div></div><p id="f770eb2e-21e6-4921-b03e-9a9a90c3685b" class="">当然，笔绘版本的原型设计稿出来之后，我们的项目经理为我们完成了Axure的原型设计</p><h3 id="dad7307d-2306-4d99-abb3-1ed3b36787a4" class="">3.4. 详细设计</h3><div id="1674f4bc-db11-4c07-9d5f-58c5ed438c1c" class="column-list"><div id="23d04cad-fa6d-43bc-9011-c1324ef319d2" style="width:50%" class="column"><blockquote id="7194b9f2-3f29-4c73-b9a6-dcc1635de6e5" class="">API文档的导出</blockquote></div><div id="3ae43dbc-6d3f-45be-ab54-53fbdc9e6eee" style="width:50%" class="column"><figure id="2998d514-8ffe-4a7e-bd6c-977a8401ae15"><div class="source"><a href="%25E6%2596%25B0API%25E6%2596%2587%25E6%25A1%25A3.pdf">新API文档.pdf</a></div></figure></div></div><p id="5878400d-aecd-4078-9e39-88c6af2c76de" class="">在原型确定下来之后，前端需要的数据项也就明确了，于是我们就开始了API的设计；于此同时，我们小组成立了飞书的组织，因为我认为使用云文档进行API文档的书写能够提高团队的沟通效率：团队中的所有成员能够实时对文档中变化的内容进行查看并且进行修改（除了短学期的上课时间，我们团队中的成员大部分时间是分开办公的，因此在开发过程中如果对某些数据项或返回信息的要求有变更，就能够通过API云文档进行即时的修改与反馈）</p><h3 id="5ee35ea8-9ffd-4dbf-87ac-967d0c712c1e" class="">3.5. 代码开发</h3><p id="fc1f667f-3267-4334-8bb0-b8bcaeaa54bd" class="">API的规范定好之后，我就开始了前端界面代码的编写。对我来说，这个阶段是整个项目中耗时最长的；其中不仅包括了UI样式布局的分配（Vuetify提供style api其实帮了很多忙，大部分情况下不用手搓css），还有涉及到UX的操作逻辑和数据的动态响应和DOM的动态渲染等，大致算下来使用了6天时间来完成了大部分前端代码的编写。</p><p id="91e67bea-a924-4f69-8a28-be660588b700" class="">在此过程中，我使用的是【模拟数据】和【Postman】的【Mock Server】进行单元测试。</p><h3 id="a613e0c2-7614-4093-98c4-e89b28c21677" class="">3.6. 集成测试</h3><p id="b1f3f5eb-00b0-494f-9533-f4e1c2043bc1" class="">这是最痛苦的一个阶段，但同时也是整个项目正式成型的阶段。通过连接后端的服务器，我们对数据的拿取做到了动态的响应；于此同时，我们也发现了之前API设计的某些缺陷和不足，进行了修改。最重要的是我们对程序进行了debug，发现了许多漏洞，并及时地进行了更改。</p><p id="61fbaa6a-8df1-4a89-8d14-44d1cfc48cc5" class="">在确定程序基本没有问题之后，小组的其它成员下载了我的代码，并连接后端服务器进行了最终展示数据的录入。</p><h3 id="2a9475c9-4e85-4500-875a-068a921c6447" class="">3.7. 系统实施</h3><p id="1224644e-bea4-4b44-b85e-a7863e9517e5" class="">项目的最终验收。在演示的过程中，老师针对项目的不同模块给出了相应的改善建议。</p><h2 id="88a3a736-995c-4fec-b315-3b873e7f0a1d" class="">4. 项目亮点</h2><ul id="327bd0ff-f309-416b-9a60-ff6201b67fd5" class="bulleted-list"><li style="list-style-type:disc">在显示详情信息时，应用会根据帖子的不同类型进行相应的图标映射，提升了用户的使用体验</li></ul><ul id="8540281f-c45a-4419-9d90-f0bb5774c5f3" class="bulleted-list"><li style="list-style-type:disc">在不同界面展示帖子使用了不同的布局<ul id="08caf8bd-389d-4cc5-9554-da5b3001d4f5" class="bulleted-list"><li style="list-style-type:circle">社区界面：用户可见范围内只有一张显示帖子的卡片，可以提高用户刷帖子的沉浸式体验</li></ul><ul id="a13bca2e-09fc-44a8-ad9b-51dbfbfc43a3" class="bulleted-list"><li style="list-style-type:circle">个人动态：在屏幕视口宽度的范围内展示两张帖子的卡片，方便用户进行帖子的管理</li></ul><ul id="90049050-08d3-4dc9-8abe-aa118884e700" class="bulleted-list"><li style="list-style-type:circle">宠物画廊：以九宫格的形式进行呈现，顾名思义”画廊“</li></ul></li></ul><ul id="39359de5-5ebc-42ae-85d5-5f208f773fa3" class="bulleted-list"><li style="list-style-type:disc">通过无限滚动，进行社区界面中帖子展示的分页，优化了系统性能</li></ul><h2 id="64d2109c-9ce6-4c56-b141-765d79deab86" class="">5. 遇到的困难 &amp; 解决方法 &amp; 学到的经验</h2><h3 id="0ccb8e02-11c8-4e41-8836-568100d6a589" class="">5.1. 移动端的UI/UX设计</h3><p id="ea929880-d407-4d71-8f4d-1dd4ba7452cd" class="">由于我之前做的项目都是适配PC端的，也没有做响应式设计；因此，这次的项目是我第一次做适配移动端的web app。尽管移动端和PC端的web app使用的前端技术栈基本相同（做的不是原生app），这两者的UI/UX上还是有很大区别的。</p><p id="cd76775d-8130-42e1-807c-4c36c11774a1" class="">考虑到PC端有较大的屏幕宽度，页面信息基本能够以平摊的方式来展示出来，使用滚动条的频率也相对小；而对于屏幕宽度窄，高度长的移动端设备来说，要尽可能充分利用此特点的方式就是增加用户划动界面的频率（即PC端的滚动条）。</p><p id="e4d2c790-de59-4230-acda-4cac5eba6b93" class="">这里就涉及到了移动端界面的无限滚动功能。一开始我认为该功能实现困难，因为也许需要涉及使用队列来进行帖子DOM的动态变化（在往下刷帖子的时候，上面刷过的帖子要消失）</p><p id="8dafec9b-5d7f-47cb-bebd-19f95fa3c6fe" class="">但是事实证明，我的担心来自我对于移动端交互实现的不熟悉。与PC端的分页功能不同（每次点击下一页的时候展示当前一整页的内容，而不展示前一页的内容）；对于移动端，在获取下一个分页的内容之后，前一个分页的内容还是存在的，并不需要移除。而Vuetify中也是提供了无限滚动的控件，只需要定义当用户划到页面底端时触发的函数即可。</p><p id="cae86173-7fb7-49a6-9b02-1ed0b4b99244" class="">除此之外，与PC端的顶部导航栏不同的是，大多数移动端应用的导航栏位于屏幕底部。</p><hr id="355a7d4b-0332-453e-b0c3-83de0268659d"/><blockquote id="763ebeff-8f5f-41da-bb78-12bb18a07a55" class="">参考界面的截图（帖子）</blockquote><div id="2148cb0e-0ee8-4e8d-a006-9636054388e2" class="column-list"><div id="6589c182-dd96-4b56-8fe3-75ab9448cd69" style="width:33.33333333333333%" class="column"><figure id="091ab2f0-5863-477a-bfbc-4dbfc3514a93" class="image"><a href="ins.jpg"><img style="width:1170px" src="ins.jpg"/></a><figcaption>Instagram</figcaption></figure></div><div id="18d8e152-d716-44b1-86b5-5a5d22e7262f" style="width:33.33333333333333%" class="column"><figure id="1dbf0c85-2679-4a64-8eed-af05f6f5338e" class="image"><a href="%25E9%2597%25B2%25E9%25B1%25BC.jpg"><img style="width:1170px" src="%25E9%2597%25B2%25E9%25B1%25BC.jpg"/></a><figcaption>闲鱼</figcaption></figure></div><div id="0b28f12e-44b1-4c5f-94ec-bd22d2bf8531" style="width:33.33333333333333%" class="column"><figure id="745b6e28-a8c1-464b-a3a4-bc6f8920c63a" class="image"><a href="%25E5%25B0%258F%25E7%25BA%25A2%25E4%25B9%25A6.jpg"><img style="width:1170px" src="%25E5%25B0%258F%25E7%25BA%25A2%25E4%25B9%25A6.jpg"/></a><figcaption>小红书</figcaption></figure></div></div><p id="12149338-2882-40a2-9f73-880a660973e9" class="">在对此类界面的原型设计过程中，我参考了当前主流社交app界面的交互方式。研究之后，我发现大部分帖子是使用了【卡片】这一控件对内容进行展示，并且图片的占比较大。相应的，在Vuetify中，就需要使用Card与Carousel控件相结合。</p><hr id="a704aa89-937f-47ee-a2b5-1c779ca8812c"/><blockquote id="16c288b6-4adc-48f9-b50b-ed995532f9c5" class="">参考界面的截图（输入）</blockquote><div id="b596ef6d-a199-45ca-9624-98bd5cd3eae2" class="column-list"><div id="da30f6ec-de07-40c0-b473-fe317f125947" style="width:33.33333333333333%" class="column"><figure id="eec4a552-c41f-4e34-b1be-6eab86ef34e4" class="image"><a href="ins1.jpg"><img style="width:1170px" src="ins1.jpg"/></a><figcaption>Instagram</figcaption></figure></div><div id="a51e571f-755d-4315-aa86-2a71255e1c77" style="width:33.33333333333333%" class="column"><figure id="edf67a19-7007-4c08-b40f-fed54ffbffc0" class="image"><a href="%25E9%2597%25B2%25E9%25B1%25BC1.jpg"><img style="width:1170px" src="%25E9%2597%25B2%25E9%25B1%25BC1.jpg"/></a><figcaption>闲鱼</figcaption></figure></div><div id="b729a07e-cffe-4c23-85f7-4d17f5e56027" style="width:33.33333333333333%" class="column"><figure id="f8cc005b-2a84-4e18-97ad-db88912a8699" class="image"><a href="%25E5%25B0%258F%25E7%25BA%25A2%25E4%25B9%25A61.jpg"><img style="width:1170px" src="%25E5%25B0%258F%25E7%25BA%25A2%25E4%25B9%25A61.jpg"/></a><figcaption>小红书</figcaption></figure></div></div><p id="8f49dcc9-8d50-4d13-9070-a8d59a5753ca" class="">对于类表单输入的控件，则是大多数使用弹窗的形式使用户进行输入内容，与PC端的表单控件相比就更为复杂。要解决该功能，就需要添加更多的响应式变量。相应的，在Vue3中，就需要使用更多的ref/reactive或computed钩子来与html元素进行绑定Vuetify中的Sheet控件的可见性与数据保存。</p><h3 id="b39c773c-ff43-49bd-a113-46f761c6eed6" class="">5.2. 遇到的Bugs</h3><p id="e14128f6-1f4d-406d-a12b-2c512e7c5210" class="">在集成测试阶段，我们使用不同用户进行登录登出的时候遇到了会登进错误用户账号的情况；经过分析，我发现了是由于我将一个动态的axios config参数（把jwt令牌放进请求的headers中）存入了环境变量中进行引用来使用，导致每次从config文件中get到的Cookie都是之前留存在浏览器中的，无法即时更新，导致此Bug的出现。</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="59fbd4bc-4eac-4849-bd7e-a4216f0c28f4" class="code"><code class="language-JavaScript">import Cookies from &quot;js-cookie&quot;;
 const config = { headers: { token: Cookies.get(&quot;userToken&quot;) } };
-export default config;</code></pre>
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-          integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        ></script>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-          integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        />
-        <pre
-          id="2c5a39ed-1769-4a05-8669-0f980f888192"
-          class="code"
-        ><code class="language-JavaScript">import config from &quot;@/CONST/config&quot;;
+export default config;</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2c5a39ed-1769-4a05-8669-0f980f888192" class="code"><code class="language-JavaScript">import config from &quot;@/CONST/config&quot;;
 
 const postsRes = await axios.get(`${baseURL}/posts?uid=${uid}`, {
       config,
-    });</code></pre>
-        <hr id="bc8f2d47-774e-4f26-a372-40f4d7566572" />
-        <p id="754aea2e-124d-41ff-a891-3f565cb63351" class="">
-          对于此问题，解决方法就是少偷点懒，在每次发送axios请求的时候都手动多写一个config的参数，在现场调用
-          Cookies.get(’userToken’) 方法，就不会出现该bug了。
-        </p>
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-          integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        ></script>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-          integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        />
-        <pre
-          id="7fee8c39-26d9-48a3-b8a7-33346db77eaa"
-          class="code"
-        ><code class="language-JavaScript">// import config from &quot;@/CONST/config&quot;;
+    });</code></pre><hr id="bc8f2d47-774e-4f26-a372-40f4d7566572"/><p id="754aea2e-124d-41ff-a891-3f565cb63351" class="">对于此问题，解决方法就是少偷点懒，在每次发送axios请求的时候都手动多写一个config的参数，在现场调用 Cookies.get(’userToken’) 方法，就不会出现该bug了。</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7fee8c39-26d9-48a3-b8a7-33346db77eaa" class="code"><code class="language-JavaScript">// import config from &quot;@/CONST/config&quot;;
 
 const postsRes = await axios.get(`${baseURL}/posts?uid=${uid}`, {
       headers: { token: Cookies.get(&quot;userToken&quot;) },
-    });</code></pre>
-        <hr id="c744af25-1365-4ee7-952b-0519b6e86d86" />
-        <p id="c515601d-ab79-443d-aaf2-4ccec30855fb" class="">
-          除此之外，还遇到了很多小bug，出现错误的原因有如下这些情况：
-        </p>
-        <blockquote id="57d35761-a178-4417-9cf3-7b9005502d7f" class="">
-          cannot read properties of null
-        </blockquote>
-        <ul id="b4baa52e-ad5c-458d-9b89-a328082827ee" class="bulleted-list">
-          <li style="list-style-type: disc">解决方法：使用可选链运算符 ?.</li>
-        </ul>
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-          integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        ></script>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-          integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        />
-        <pre
-          id="65a0d76f-4b0a-4c3f-8a3f-2dacfa430022"
-          class="code"
-        ><code class="language-JavaScript">&lt;Title :title=&quot;postInfo.reactiveData?.title&quot;&gt;&lt;/Title&gt;</code></pre>
-        <blockquote id="929e18eb-b677-4512-a39d-bc217538b0e7" class="">
-          defineEmits的数据出错
-        </blockquote>
-        <ul id="9e5a7e0a-56f4-4123-81ba-aa93415ec467" class="bulleted-list">
-          <li style="list-style-type: disc">解决方法：需要对变量进行解构</li>
-        </ul>
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-          integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        ></script>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-          integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        />
-        <pre
-          id="7d42d108-6c9a-4c41-aef8-c0eae9987cba"
-          class="code"
-        ><code class="language-JavaScript">const { isMyProfile } = defineProps([&quot;is-my-profile&quot;]);</code></pre>
-        <blockquote id="7a482da1-cb24-4f2b-b21b-bb6790e3f40b" class="">
-          响应式数据读取值失败
-        </blockquote>
-        <ul id="2d695efe-0480-4a8a-a715-5066e8edb7e8" class="bulleted-list">
-          <li style="list-style-type: disc">
-            解决方法：
-            <ul id="d4e25bc7-91ac-42fa-8a09-8574a347b86a" class="bulleted-list">
-              <li style="list-style-type: circle">
-                在&lt;script
-                setup&gt;&lt;/script&gt;中，对于ref数据需要对.value进行读取，对于reactive数据则直接读取
-              </li>
-            </ul>
-            <ul id="09dc3eee-fe2c-4e08-8cbe-caafa6e40010" class="bulleted-list">
-              <li style="list-style-type: circle">
-                在&lt;template&gt;&lt;/template&gt;中使用ref和reactive数据皆直接使用即可
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-          integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        ></script>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-          integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        />
-        <pre
-          id="96119763-79a6-46e9-91ef-36140415f7f2"
-          class="code"
-        ><code class="language-JavaScript">
+    });</code></pre><hr id="c744af25-1365-4ee7-952b-0519b6e86d86"/><p id="c515601d-ab79-443d-aaf2-4ccec30855fb" class="">除此之外，还遇到了很多小bug，出现错误的原因有如下这些情况：</p><blockquote id="57d35761-a178-4417-9cf3-7b9005502d7f" class="">cannot read properties of null</blockquote><ul id="b4baa52e-ad5c-458d-9b89-a328082827ee" class="bulleted-list"><li style="list-style-type:disc">解决方法：使用可选链运算符 ?.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="65a0d76f-4b0a-4c3f-8a3f-2dacfa430022" class="code"><code class="language-JavaScript">&lt;Title :title=&quot;postInfo.reactiveData?.title&quot;&gt;&lt;/Title&gt;</code></pre><blockquote id="929e18eb-b677-4512-a39d-bc217538b0e7" class="">defineEmits的数据出错</blockquote><ul id="9e5a7e0a-56f4-4123-81ba-aa93415ec467" class="bulleted-list"><li style="list-style-type:disc">解决方法：需要对变量进行解构</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7d42d108-6c9a-4c41-aef8-c0eae9987cba" class="code"><code class="language-JavaScript">const { isMyProfile } = defineProps([&quot;is-my-profile&quot;]);</code></pre><blockquote id="7a482da1-cb24-4f2b-b21b-bb6790e3f40b" class="">响应式数据读取值失败</blockquote><ul id="2d695efe-0480-4a8a-a715-5066e8edb7e8" class="bulleted-list"><li style="list-style-type:disc">解决方法：<ul id="d4e25bc7-91ac-42fa-8a09-8574a347b86a" class="bulleted-list"><li style="list-style-type:circle">在&lt;script setup&gt;&lt;/script&gt;中，对于ref数据需要对.value进行读取，对于reactive数据则直接读取</li></ul><ul id="09dc3eee-fe2c-4e08-8cbe-caafa6e40010" class="bulleted-list"><li style="list-style-type:circle">在&lt;template&gt;&lt;/template&gt;中使用ref和reactive数据皆直接使用即可</li></ul></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="96119763-79a6-46e9-91ef-36140415f7f2" class="code"><code class="language-JavaScript">
 import { ref, reactive } from &quot;vue&quot;;
 
 let curView = ref(0);
 const var = curView.value;
 
 let postInfo = reactive({ reactiveData: null });
-const username = postInfo.reactiveData?.username;</code></pre>
-        <h2 id="f0b74d1d-0678-4906-881a-92999ef418fe" class="">6. 项目结果</h2>
-        <p id="9aa00533-a5b5-4e3c-86a8-7e105dc71581" class="">
-          在最后的系统实施阶段，我们基本完成了预期中的所有功能。但是由于开发时间的原因，有一些功能没有完善的特别好。例如无限滚动的分页功能；此功能在社区主页中得到了实施，但是由于时间不足，没能够在帖子详情中的评论区模块中应用到。但是考虑到此功能在类似的模块中已经得到实现，证明了我已经掌握了该技术的实现方法；如果在时间充分的情况下，是能够将此技术投放到其它模块中的。
-        </p>
-        <p id="01b38f8d-d9c0-4cf2-abad-78396a06fe26" class="">
-          对于系统稳定性而言，经过验收前的测试，本系统的鲁棒性还是较为可观的。在移动端，经过注册和登录，用户能够对帖子和评论进行新增、查看和删除；在PC端，管理员可以对帖子和评论进行审查，并且能够封禁不符合系统使用规范的帖子、评论和用户。
-        </p>
-        <p id="37b5d4a3-5f85-4488-9006-8f151389ffef" class="">
-          对于不符合规范的输入，系统具有良好的表单验证功能，可以防止用户发表不符合数据规范的帖子、评论和注册表单；对于请求的发送和接收，也对请求失败的情况进行了处理，防止系统的异常崩溃。
-        </p>
-        <h2 id="8f411fc7-8723-44db-8465-bd8346eb06b8" class="">
-          7. 未来可实施的改进
-        </h2>
-        <h3 id="c5498c9d-70e8-4a17-b2f6-055915b40741" class="">
-          7.1. 图片存储格式
-        </h3>
-        <p id="ad19254c-c535-415b-aceb-b3693a0d3016" class="">
-          由于本次项目我第一次接触到图片的存储，对这方面的了解不是很多。总之，我们在本项目中选择了base64作为图片的存储和传输格式，导致每次帖子的加载时间都很长，严重降低了系统的性能。
-        </p>
-        <p id="25bcbcce-3b13-4e64-a4c7-76ddb0fc3e79" class="">
-          根据老师的建议，我们应当使用url的形式来对图像进行存储，这样能够大大减小每次响应包的大小，从而提升数据加载的速度。
-        </p>
-        <h3 id="fc8c4e1f-c1b9-4e39-b6fe-c1762f25e86f" class="">
-          7.2. 移动端的检索和分类功能
-        </h3>
-        <p id="dc5b3a14-a667-47eb-9985-b5bd403cf00d" class="">
-          按照帖子类型搜索的API在设计的时候有考虑到，并且在PC端也有相应的实现。但是在本项目周期中，没有充足的时间在移动端实现该功能；因此，模糊查询帖子标题、用户，以及对帖子类型进行分类的功能可以作为本项目在未来版本升级中引进的新功能。
-        </p>
-        <h3 id="9fd6e674-611b-4f00-b376-e1f738ef3207" class="">
-          7.3. 点赞的用户追踪
-        </h3>
-        <p id="8cbf5460-ca99-4063-abdc-8b3416f871c1" class="">
-          对于目前项目的点赞功能，本系统无法对于点赞进行用户的追踪，导致用户能对相同的帖子进行多次的点赞，而这点是明显不符合业务逻辑的。但是此功能可以作为系统的未来改进实施。
-        </p>
-        <h3 id="3a91ce95-0412-42ec-9f18-d9b3f1992788" class="">
-          7.4. UI/UX的完善
-        </h3>
-        <p id="ff4dddec-33f9-4b8f-b7ef-cb77cadf124a" class="">
-          尽管移动端的UI界面大致符合了用户在手机上所期待的视图，界面仍有美化的空间。除此之外，UX体验也能够进行升级。例如：在当前系统中，用户需要通过长按来对评论进行删除；对此，老师建议能够对每个评论添加一个Swipe事件的监听器，使用户能够通过滑动评论进行删除。
-        </p>
-        <p id="a0545e2a-f338-4304-b139-223d9633b116" class="">
-          由于这是我做的第一个适配移动端的界面，有一些设计的不足也是在意料之中；相信通过往后更多项目的历练，能够使我在设计移动端UI/UX时考虑得更加全面。
-        </p>
-        <h2 id="1fb99568-0b2e-4eac-9ac5-8670475453c0" class="">8. 个人成长</h2>
-        <ul id="0dbdaef9-e014-4a95-a84d-229cf7c0ff69" class="bulleted-list">
-          <li style="list-style-type: disc">增加了对Vue3使用的熟练度</li>
-        </ul>
-        <ul id="c1e7e54d-286d-4307-8aec-1b60eb01c471" class="bulleted-list">
-          <li style="list-style-type: disc">
-            进一步了解了响应式DOM渲染组件的生命周期和运行原理
-          </li>
-        </ul>
-        <ul id="a9f95471-7b56-436e-bea4-147b14cde506" class="bulleted-list">
-          <li style="list-style-type: disc">
-            对移动端应用的UI/UX进行过了深入的研究，积累了相关经验
-          </li>
-        </ul>
-        <ul id="b4e6f4a0-8026-4df2-a268-ee39d313a118" class="bulleted-list">
-          <li style="list-style-type: disc">
-            传输数据量的增加使我理解了系统性能优化的必要性
-          </li>
-        </ul>
-        <ul id="c838e86d-5a7d-4a51-bc34-1d4411d6cb8c" class="bulleted-list">
-          <li style="list-style-type: disc">
-            团队合作开发使我意识到使用Github能够方便组员进行代码的查看、克隆与管理
-          </li>
-        </ul>
-      </div>
-    </article>
-    <span class="sans" style="font-size: 14px; padding-top: 2em"></span>
-  </body>
-</html>
+const username = postInfo.reactiveData?.username;</code></pre><h2 id="f0b74d1d-0678-4906-881a-92999ef418fe" class="">6. 项目结果</h2><p id="9aa00533-a5b5-4e3c-86a8-7e105dc71581" class="">在最后的系统实施阶段，我们基本完成了预期中的所有功能。但是由于开发时间的原因，有一些功能没有完善的特别好。例如无限滚动的分页功能；此功能在社区主页中得到了实施，但是由于时间不足，没能够在帖子详情中的评论区模块中应用到。但是考虑到此功能在类似的模块中已经得到实现，证明了我已经掌握了该技术的实现方法；如果在时间充分的情况下，是能够将此技术投放到其它模块中的。</p><p id="01b38f8d-d9c0-4cf2-abad-78396a06fe26" class="">对于系统稳定性而言，经过验收前的测试，本系统的鲁棒性还是较为可观的。在移动端，经过注册和登录，用户能够对帖子和评论进行新增、查看和删除；在PC端，管理员可以对帖子和评论进行审查，并且能够封禁不符合系统使用规范的帖子、评论和用户。</p><p id="37b5d4a3-5f85-4488-9006-8f151389ffef" class="">对于不符合规范的输入，系统具有良好的表单验证功能，可以防止用户发表不符合数据规范的帖子、评论和注册表单；对于请求的发送和接收，也对请求失败的情况进行了处理，防止系统的异常崩溃。</p><h2 id="8f411fc7-8723-44db-8465-bd8346eb06b8" class="">7. 未来可实施的改进</h2><h3 id="c5498c9d-70e8-4a17-b2f6-055915b40741" class="">7.1. 图片存储格式</h3><p id="ad19254c-c535-415b-aceb-b3693a0d3016" class="">由于本次项目我第一次接触到图片的存储，对这方面的了解不是很多。总之，我们在本项目中选择了base64作为图片的存储和传输格式，导致每次帖子的加载时间都很长，严重降低了系统的性能。</p><p id="25bcbcce-3b13-4e64-a4c7-76ddb0fc3e79" class="">根据老师的建议，我们应当使用url的形式来对图像进行存储，这样能够大大减小每次响应包的大小，从而提升数据加载的速度。</p><h3 id="fc8c4e1f-c1b9-4e39-b6fe-c1762f25e86f" class="">7.2. 移动端的检索和分类功能</h3><p id="dc5b3a14-a667-47eb-9985-b5bd403cf00d" class="">按照帖子类型搜索的API在设计的时候有考虑到，并且在PC端也有相应的实现。但是在本项目周期中，没有充足的时间在移动端实现该功能；因此，模糊查询帖子标题、用户，以及对帖子类型进行分类的功能可以作为本项目在未来版本升级中引进的新功能。</p><h3 id="9fd6e674-611b-4f00-b376-e1f738ef3207" class="">7.3. 点赞的用户追踪</h3><p id="8cbf5460-ca99-4063-abdc-8b3416f871c1" class="">对于目前项目的点赞功能，本系统无法对于点赞进行用户的追踪，导致用户能对相同的帖子进行多次的点赞，而这点是明显不符合业务逻辑的。但是此功能可以作为系统的未来改进实施。</p><h3 id="3a91ce95-0412-42ec-9f18-d9b3f1992788" class="">7.4. UI/UX的完善</h3><p id="ff4dddec-33f9-4b8f-b7ef-cb77cadf124a" class="">尽管移动端的UI界面大致符合了用户在手机上所期待的视图，界面仍有美化的空间。除此之外，UX体验也能够进行升级。例如：在当前系统中，用户需要通过长按来对评论进行删除；对此，老师建议能够对每个评论添加一个Swipe事件的监听器，使用户能够通过滑动评论进行删除。</p><p id="a0545e2a-f338-4304-b139-223d9633b116" class="">由于这是我做的第一个适配移动端的界面，有一些设计的不足也是在意料之中；相信通过往后更多项目的历练，能够使我在设计移动端UI/UX时考虑得更加全面。</p><h2 id="1fb99568-0b2e-4eac-9ac5-8670475453c0" class="">8. 个人成长</h2><ul id="0dbdaef9-e014-4a95-a84d-229cf7c0ff69" class="bulleted-list"><li style="list-style-type:disc">增加了对Vue3使用的熟练度</li></ul><ul id="c1e7e54d-286d-4307-8aec-1b60eb01c471" class="bulleted-list"><li style="list-style-type:disc">进一步了解了响应式DOM渲染组件的生命周期和运行原理</li></ul><ul id="a9f95471-7b56-436e-bea4-147b14cde506" class="bulleted-list"><li style="list-style-type:disc">对移动端应用的UI/UX进行过了深入的研究，积累了相关经验</li></ul><ul id="b4e6f4a0-8026-4df2-a268-ee39d313a118" class="bulleted-list"><li style="list-style-type:disc">传输数据量的增加使我理解了系统性能优化的必要性</li></ul><ul id="c838e86d-5a7d-4a51-bc34-1d4411d6cb8c" class="bulleted-list"><li style="list-style-type:disc">团队合作开发使我意识到使用Github能够方便组员进行代码的查看、克隆与管理</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
