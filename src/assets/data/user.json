@@ -1,0 +1,15 @@
+{
+  "message": "",
+  "data": {
+    "userStatus": "",
+    "role": "",
+    "tel": "18056838590",
+    "gender": "male",
+    "realName": "姓名",
+    "nickName": "Username",
+    "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light",
+    "address": "this is my address",
+    "bio": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam repellat quasi eligendi omnis quidem dignissimos sit porro aliquid perferendis.",
+    "time": "time"
+  }
+}
